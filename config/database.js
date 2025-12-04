@@ -1,6 +1,6 @@
 module.exports = ({ env }) => ({
   connection: {
-    client: 'mongo',
+    client: 'mongodb',
     connection: {
       uri: env('DATABASE_URL'),
       database: 'placavision-cms',
