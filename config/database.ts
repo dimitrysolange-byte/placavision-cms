@@ -1,9 +1,15 @@
 export default ({ env }) => ({
   connection: {
-    client: 'mongodb',
+    client: 'postgres',
     connection: {
-      uri: env('DATABASE_URL'),
-      database: 'placavision-cms',
+      connectionString: env('DATABASE_URL'),
+      ssl: {
+        rejectUnauthorized: false,
+      },
+    },
+    pool: {
+      min: 2,
+      max: 10,
     },
   },
 });
