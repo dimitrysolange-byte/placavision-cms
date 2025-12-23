@@ -1,0 +1,14 @@
+{
+  "kind": "singleType",
+  "collectionName": "soluciones_en_pantallas_leds",
+  "info": {
+    "singularName": "soluciones-en-pantallas-led",
+    "pluralName": "soluciones-en-pantallas-leds",
+    "displayName": "Soluciones en pantallas LED"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {}
+}
