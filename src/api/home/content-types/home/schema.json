@@ -35,6 +35,19 @@
     },
     "Esto": {
       "type": "string"
+    },
+    "EDAD": {
+      "type": "date"
+    },
+    "Cedulajh": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     }
   }
 }
