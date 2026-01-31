@@ -448,6 +448,7 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
     ctaText: Schema.Attribute.String;
     ctaUrl: Schema.Attribute.String;
     EDAD: Schema.Attribute.Date;
+    emailw: Schema.Attribute.Email;
     Esto: Schema.Attribute.String;
     heroImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     heroSubtitle: Schema.Attribute.String;
