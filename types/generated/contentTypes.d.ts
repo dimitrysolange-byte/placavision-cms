@@ -442,6 +442,7 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
   };
   attributes: {
     benefit_item: Schema.Attribute.Component<'shared.benefit-item', false>;
+    Contact1: Schema.Attribute.Component<'contact.contac', false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -450,6 +451,9 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
       'images' | 'files' | 'videos' | 'audios'
     >;
     hero_title: Schema.Attribute.String;
+    imagen_principal: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::home.home'> &
       Schema.Attribute.Private;
