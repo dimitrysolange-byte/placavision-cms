@@ -38,24 +38,8 @@
     "vision": {
       "type": "text"
     },
-    "cta_text": {
-      "type": "string"
-    },
-    "cta_link": {
-      "type": "string"
-    },
-    "whatsapp_link": {
-      "type": "string"
-    },
-    "social_link": {
-      "type": "component",
-      "component": "social-link.social-links",
-      "repeatable": false
-    },
-    "seo": {
-      "type": "component",
-      "component": "seo.seo",
-      "repeatable": false
+    "Valores": {
+      "type": "text"
     }
   }
 }

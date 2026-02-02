@@ -445,8 +445,6 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    cta_link: Schema.Attribute.String;
-    cta_text: Schema.Attribute.String;
     hero_description: Schema.Attribute.Blocks;
     hero_image: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
@@ -457,13 +455,11 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     purpose: Schema.Attribute.Blocks;
-    seo: Schema.Attribute.Component<'seo.seo', false>;
-    social_link: Schema.Attribute.Component<'social-link.social-links', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    Valores: Schema.Attribute.Text;
     vision: Schema.Attribute.Text;
-    whatsapp_link: Schema.Attribute.String;
   };
 }
 
