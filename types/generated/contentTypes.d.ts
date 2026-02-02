@@ -441,20 +441,48 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    Cedulajh: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    benefit_item: Schema.Attribute.Component<'shared.benefit-item', false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    ctaText: Schema.Attribute.String;
-    ctaUrl: Schema.Attribute.String;
-    EDAD: Schema.Attribute.Date;
-    emailw: Schema.Attribute.Email;
-    Esto: Schema.Attribute.String;
-    heroImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    heroSubtitle: Schema.Attribute.String;
-    heroTitle: Schema.Attribute.String;
+    cta_link: Schema.Attribute.String;
+    cta_text: Schema.Attribute.String;
+    hero_description: Schema.Attribute.Blocks;
+    hero_image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    hero_title: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::home.home'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    purpose: Schema.Attribute.Blocks;
+    seo: Schema.Attribute.Component<'seo.seo', false>;
+    social_link: Schema.Attribute.Component<'social-link.social-links', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    vision: Schema.Attribute.Text;
+    whatsapp_link: Schema.Attribute.String;
+  };
+}
+
+export interface ApiHome1Home1 extends Struct.SingleTypeSchema {
+  collectionName: 'home1s';
+  info: {
+    displayName: 'Home1';
+    pluralName: 'home1s';
+    singularName: 'home1';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::home1.home1'> &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
@@ -1034,6 +1062,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::home.home': ApiHomeHome;
+      'api::home1.home1': ApiHome1Home1;
       'api::service.service': ApiServiceService;
       'api::soluciones-en-pantallas-led.soluciones-en-pantallas-led': ApiSolucionesEnPantallasLedSolucionesEnPantallasLed;
       'plugin::content-releases.release': PluginContentReleasesRelease;

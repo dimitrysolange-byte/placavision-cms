@@ -1,0 +1,10 @@
+{
+  "collectionName": "components_shared_benefit_items",
+  "info": {
+    "displayName": "benefit_item",
+    "icon": "alien"
+  },
+  "options": {},
+  "attributes": {},
+  "config": {}
+}

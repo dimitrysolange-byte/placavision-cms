@@ -11,19 +11,13 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "heroTitle": {
+    "hero_title": {
       "type": "string"
     },
-    "heroSubtitle": {
-      "type": "string"
+    "hero_description": {
+      "type": "blocks"
     },
-    "ctaText": {
-      "type": "string"
-    },
-    "ctaUrl": {
-      "type": "string"
-    },
-    "heroImage": {
+    "hero_image": {
       "type": "media",
       "multiple": false,
       "allowedTypes": [
@@ -33,24 +27,35 @@
         "audios"
       ]
     },
-    "Esto": {
+    "purpose": {
+      "type": "blocks"
+    },
+    "benefit_item": {
+      "type": "component",
+      "component": "shared.benefit-item",
+      "repeatable": false
+    },
+    "vision": {
+      "type": "text"
+    },
+    "cta_text": {
       "type": "string"
     },
-    "EDAD": {
-      "type": "date"
+    "cta_link": {
+      "type": "string"
     },
-    "Cedulajh": {
-      "type": "media",
-      "multiple": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
+    "whatsapp_link": {
+      "type": "string"
     },
-    "emailw": {
-      "type": "email"
+    "social_link": {
+      "type": "component",
+      "component": "social-link.social-links",
+      "repeatable": false
+    },
+    "seo": {
+      "type": "component",
+      "component": "seo.seo",
+      "repeatable": false
     }
   }
 }
