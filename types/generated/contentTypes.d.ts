@@ -551,6 +551,92 @@ export interface ApiSolucionesEnPantallasLedSolucionesEnPantallasLed
   };
 }
 
+export interface ApiSurveySurvey extends Struct.CollectionTypeSchema {
+  collectionName: 'surveys';
+  info: {
+    displayName: 'Survey';
+    pluralName: 'surveys';
+    singularName: 'survey';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    budget_range: Schema.Attribute.Enumeration<
+      ['menos_50', 'entre_50_100', 'entre_100_300', 'mas_300', 'no_lo_se']
+    >;
+    comments: Schema.Attribute.Text;
+    contact_permission: Schema.Attribute.Boolean;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    email: Schema.Attribute.Email;
+    interested_in_trial: Schema.Attribute.Boolean;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::survey.survey'
+    > &
+      Schema.Attribute.Private;
+    Name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    system_usefulness: Schema.Attribute.Enumeration<
+      ['nada_ut', 'poco_util', 'neutral', 'util', 'muy_util']
+    >;
+    Tipo_de_usuario: Schema.Attribute.Enumeration<
+      [
+        'empresa_seguridad',
+        'gobierno_policia',
+        'estacionamiento_privado',
+        'empresa_transporte',
+        'usuario_particular',
+        'otro',
+      ]
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    usage_environment: Schema.Attribute.Enumeration<
+      [
+        'calles_publicas',
+        'peajes',
+        'estacionamientos',
+        'residenciales',
+        'centros_comerciales',
+        'fronteras',
+        'otro',
+      ]
+    >;
+  };
+}
+
+export interface ApiTestimonialTestimonial extends Struct.CollectionTypeSchema {
+  collectionName: 'testimonials';
+  info: {
+    displayName: 'Testimonial';
+    pluralName: 'testimonials';
+    singularName: 'testimonial';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::testimonial.testimonial'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -1065,6 +1151,8 @@ declare module '@strapi/strapi' {
       'api::home1.home1': ApiHome1Home1;
       'api::service.service': ApiServiceService;
       'api::soluciones-en-pantallas-led.soluciones-en-pantallas-led': ApiSolucionesEnPantallasLedSolucionesEnPantallasLed;
+      'api::survey.survey': ApiSurveySurvey;
+      'api::testimonial.testimonial': ApiTestimonialTestimonial;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

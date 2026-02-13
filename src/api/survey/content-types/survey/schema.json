@@ -1,0 +1,73 @@
+{
+  "kind": "collectionType",
+  "collectionName": "surveys",
+  "info": {
+    "singularName": "survey",
+    "pluralName": "surveys",
+    "displayName": "Survey"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "Tipo_de_usuario": {
+      "type": "enumeration",
+      "enum": [
+        "empresa_seguridad",
+        "gobierno_policia",
+        "estacionamiento_privado",
+        "empresa_transporte",
+        "usuario_particular",
+        "otro"
+      ]
+    },
+    "system_usefulness": {
+      "type": "enumeration",
+      "enum": [
+        "nada_ut",
+        "poco_util",
+        "neutral",
+        "util",
+        "muy_util"
+      ]
+    },
+    "usage_environment": {
+      "type": "enumeration",
+      "enum": [
+        "calles_publicas",
+        "peajes",
+        "estacionamientos",
+        "residenciales",
+        "centros_comerciales",
+        "fronteras",
+        "otro"
+      ]
+    },
+    "interested_in_trial": {
+      "type": "boolean"
+    },
+    "budget_range": {
+      "type": "enumeration",
+      "enum": [
+        "menos_50",
+        "entre_50_100",
+        "entre_100_300",
+        "mas_300",
+        "no_lo_se"
+      ]
+    },
+    "comments": {
+      "type": "text"
+    },
+    "contact_permission": {
+      "type": "boolean"
+    }
+  }
+}
